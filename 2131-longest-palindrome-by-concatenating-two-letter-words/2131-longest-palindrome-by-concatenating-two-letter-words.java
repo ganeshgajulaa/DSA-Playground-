@@ -3,11 +3,11 @@ class Solution {
         Map<String,Integer> mp = new HashMap<>();
         
         for(int i=0;i<words.length;i++){
-            if(mp.containsKey(words[i])){
+            // if(mp.containsKey(words[i])){
                 mp.put(words[i],mp.getOrDefault(words[i],0)+1);
-            }else{
-                mp.put(words[i],1);
-            }
+            // }else{
+            //     mp.put(words[i],1);
+            // }
         }
 //                     lc-1 cl-1 gg-1
         int ans = 0;boolean cntr = false;
