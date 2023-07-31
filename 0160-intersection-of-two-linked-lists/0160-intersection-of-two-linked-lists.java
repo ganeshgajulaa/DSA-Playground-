@@ -10,41 +10,15 @@
  * }
  */
 public class Solution {
-    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-        ListNode a = headA;
-        ListNode b = headB;
+    public ListNode getIntersectionNode(ListNode a, ListNode b) {
+        ListNode p = a;
+        ListNode q = b;
         
-        long n = 0;
-        long m = 0;
-        
-        while(a!=null || b!= null){
-            if(a!=null){
-                a=a.next;
-                n++;
+        while(p!=q){
+            p = p!=null? p=p.next:b;
+            q = q!=null? q=q.next:a;
             }
-            if(b!=null){
-                b=b.next;
-                m++;
-            }
-        }
         
-        long diff = Math.abs(n-m);
-                
-        ListNode p1 = n>m ? headA:headB;
-        ListNode p2 = p1==headA ? headB:headA;
-        
-        int i=0;
-        while(i<diff){
-            p1=p1.next;
-            i++;
-        }
-        
-        while(p1!=p2){
-            p1=p1.next;
-            p2=p2.next;
-        }
-        
-        return p1;
-        
+        return p;
     }
 }
